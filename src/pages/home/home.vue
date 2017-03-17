@@ -55,16 +55,6 @@
 				}).catch(function(error){
 					console.log('请求热门商品数据:'+error);
 				});
-			},
-
-			test: function(){
-				return function(){
-					var a = {
-						name: 'zs',
-						age: 19
-					}
-					return a;
-				}
 			}
 		},
 		components: {
