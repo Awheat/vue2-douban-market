@@ -47,6 +47,7 @@ npm run build
 在此DEMO中使用了一下技术
 * vue2
 * vue-router2
+* webpack2
 * es6
 * axios
 * vue-infinite-scroll
