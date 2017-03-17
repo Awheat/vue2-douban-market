@@ -9,6 +9,10 @@ so 在最近工作之余的时间就正儿八经的撸起袖子开始了我的vu
 
 http://www.iw728.com/pages/7/douban/#/
 
+### 手机扫码访问
+
+![Markdown](http://p1.bqimg.com/587986/86417569ada2d7ea.png)
+
 ### 部分截图
 
 ![Markdown](http://p1.bqimg.com/587986/50a15b82eaf7347b.jpg)
