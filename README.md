@@ -72,7 +72,7 @@ npm run build
 │   ├── pages          // 各页面
 │   ├── router         // 存放路由的文件夹
 │   ├── store	       // 状态管理store
-│   ├── App.Vue        // 模板文件
+│   ├── App.Vue        // 模板文件入口
 │   └── main.js        // Webpack 预编译入口
 │	
 
