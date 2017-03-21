@@ -9,12 +9,12 @@
 	</div>
 </template>
 <script type="text/javascript">
-
+	import {mapState, mapActions} from 'vuex'
 	import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 	export default {
 		name: 'carrousel',
-		props:['sliders'],
+		//props:['sliders'],
 		data() {
 		    return {
 		      swiperOption: {
@@ -28,6 +28,21 @@
 		      }
 		  	}
 		},
+		computed: {
+			//映射State
+            ...mapState([
+                'sliders'
+            ])
+        },
+		mounted() {
+			this.getSliders();
+		},
+		methods: {
+        	// 映射Actions中的handlerScroll方法
+        	...mapActions([
+			    'getSliders'
+			])
+        },
 		components: {
 		   	swiper,
 		    swiperSlide

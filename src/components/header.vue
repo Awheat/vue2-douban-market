@@ -4,7 +4,7 @@
 		<div class="db_header_main">
 			<!-- logo和搜索icon -->
 			<div class="db_logo_box" v-show="!isSearch">
-				<div class="db_logo_text">北苑市集</div>
+				<div class="db_logo_text">豆瓣市集</div>
 				<div class="db_search_icon" v-on:click="onSearch"><i class="fa fa-search"></i></div>
 			</div>
 			<!-- 搜索块 -->

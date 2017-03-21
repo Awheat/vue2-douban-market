@@ -11,9 +11,9 @@
 			</div>
 		</div>
 
-		<div class="db_products" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+		<div class="db_products" v-infinite-scroll="getProducts" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
 			<ul>
-				<li v-for="product in productList">
+				<li v-for="product in products">
 					<div class="pdt_item">
 						<a :href="product.url+'/'+product.id" class="pdt_img">
 							<img v-lazy="product.src" height="300" width="300">
@@ -32,67 +32,35 @@
 				</li>
 			</ul>
 			<!-- 加载更多，没有数据组件 -->
-			<loading v-show="loading"></loading>
-			<none v-show="tips"></none>
+			<loading v-show="isShowLoadingTips"></loading>
+			<none v-show="isShowLoadedTips"></none>
 		</div>
 	</div>
 </template>
 <script type="text/javascript">
-	import Vue from 'vue'
-	import axios from 'axios'
-	import infiniteScroll from 'vue-infinite-scroll'
+	import {mapState, mapActions} from 'vuex'
 	import ListHeader from './list_header.vue'
 	import ListNav from './list_nav.vue'
 	import Loading from '../../components/loading.vue'
 	import None from '../../components/none.vue'
 
-	Vue.use(infiniteScroll);
-
 	export default {
 		data() {
 			return {
-				flag: true,
-				productList: [],
-				tips:false,
-				loading:false,
-				num:10,
-    			busy: false	
+				flag: true
 			}
 		},
+		computed: {
+			//映射State
+            ...mapState([
+            	'products',
+                'busy',
+                'isShowLoadingTips',
+                'isShowLoadedTips'
+            ])
+        },
 		methods: {
-			getData(){
-				axios.get('/mock/products/products.json').then((response)=>{
-					var result = response.data.list.slice(this.num-10,this.num);
-					console.log(result);
-					if(result.length !== 0){
-						this.loading = false;
-						for(let i in result){
-							this.productList.push({
-								id:result[i].id,
-								src:result[i].src,
-							    url:result[i].url,
-							    title:result[i].title,
-							    newPrice: result[i].newPrice,
-							    oldPrice: result[i].oldPrice
-							});
-						}
-						this.busy = false;
-						this.num+=10;
-					}else{
-						this.busy = true;
-						this.tips = true;
-						this.loading = false;
-					}	
-				})
-			},
-		    loadMore() {
-		      	this.busy = true;
-		      	this.loading = true;
-		      	setTimeout(() => {
-			        this.getData();
-			    }, 1000);
-		      	
-		    },
+			...mapActions(['getProducts']),
 		    onHeart: function(e){
 		    	if(this.flag){
 		    		e.target.className="fa fa-heart";

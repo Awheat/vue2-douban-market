@@ -1,13 +1,13 @@
 <template>
-	<div class="db_nav" :class="{fixed:isFixed}">
+	<div class="db_nav" :class="{fixed:isFixedHeader}">
 		<ul>
 			<li v-for="item in navItem"><router-link :to="item.url">{{item.text}}</router-link></li>
 		</ul>
 	</div>
 </template>
 <script type="text/javascript">
+	import {mapState, mapMutations, mapActions} from 'vuex'
 	export default {
-		props:['isFixed'],
 		data() {
 			return {
 				navItem: [
@@ -17,7 +17,23 @@
 					{text:"我的",url:"/my"},
 				]
 			}
-		}
+		},
+		computed: {
+			//映射State
+            ...mapState([
+                'isFixedHeader'
+            ])
+        },
+        mounted() {
+        	// 监听滚动条
+        	window.addEventListener('scroll',this.handlerScroll);		    
+        },
+        methods: {
+        	// 映射Actions中的handlerScroll方法
+        	...mapActions([
+			    'handlerScroll'
+			])
+        }
 	}
 </script>
 <style lang="scss">

@@ -1,5 +1,5 @@
 <template>
-	<div class="db_hot_shop" v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="{num}">
+	<div class="db_hot_shop" v-infinite-scroll="getHotShops" infinite-scroll-disabled="busy" infinite-scroll-distance="{num}">
 		<!-- 一个店铺 -->
 		<div class="db_shop_item" v-for="shop in hotShops">
 			<!-- 店铺名称和简介 -->
@@ -35,59 +35,26 @@
 		</div>
 		
 		<!-- 加载更多，没有数据组件 -->
-		<loading v-show="loading"></loading>
-		<none v-show="tips"></none>
+		<loading v-show="isShowLoadingTips"></loading>
+		<none v-show="isShowLoadedTips"></none>
 	</div>
 </template>
 <script type="text/javascript">
-	import Vue from 'vue'
-	import axios from 'axios'
-	import infiniteScroll from 'vue-infinite-scroll'
+	import {mapState, mapActions} from 'vuex'
 	import Loading from '../../components/loading.vue'
 	import None from '../../components/none.vue'
 	export default {
-		data(){
-			return {
-				hotShops:[],
-				tips:false,
-				loading:false,
-				num:5,
-    			busy: false
-			}
-		},
+		computed: {
+			//映射State
+            ...mapState([
+            	'hotShops',
+                'busy',
+                'isShowLoadingTips',
+                'isShowLoadedTips'
+            ])
+        },
 		methods: {
-			getData(){
-				axios.get('/mock/home/hot_shop.json').then((response)=>{
-					var result = response.data.list.slice(this.num-5,this.num);
-					console.log(result);
-					if(result.length !== 0){
-						this.loading = false;
-						for(let i in result){
-							this.hotShops.push({
-								icon:result[i].icon,
-							    name:result[i].name,
-							    intrduction:result[i].intrduction,
-							    products: result[i].products,
-							    url: result[i].url
-							});
-						}
-						this.busy = false;
-						this.num+=5;
-					}else{
-						this.busy = true;
-						this.tips = true;
-						this.loading = false;
-					}	
-				})
-			},
-		    loadMore() {
-		      	this.busy = true;
-		      	this.loading = true;
-		      	setTimeout(() => {
-			        this.getData();
-			    }, 1000);
-		      	
-		    }
+			...mapActions(['getHotShops'])
 		},
 		components: {
 			Loading,
