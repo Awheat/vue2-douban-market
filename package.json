@@ -43,6 +43,7 @@
     "semver": "^5.3.0",
     "url-loader": "^0.5.7",
     "vue-awesome-swiper": "^2.3.2",
+    "vue-infinite-scroll": "^2.0.0",
     "vue-lazyload": "^1.0.0-rc12",
     "vue-loader": "^11.1.4",
     "vue-style-loader": "^2.0.0",
