@@ -11,7 +11,7 @@ http://www.iw728.com/pages/7/douban/#/
 
 ### 手机扫码访问
 
-![Markdown](http://p1.bqimg.com/587986/86417569ada2d7ea.png)
+![Markdown](http://i4.buimg.com/587986/89397e9957bff809.png)
 
 ### 部分截图
 
