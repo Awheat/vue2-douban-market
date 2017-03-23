@@ -7,7 +7,7 @@ so 在最近工作之余的时间就正儿八经的撸起袖子开始了我的vu
 
 ### 线上访问地址
 
-http://www.5ishe.com/pages/7/douban/#/
+http://www.5ishe.win/pages/7/douban/#/
 
 ### 手机扫码访问
 
