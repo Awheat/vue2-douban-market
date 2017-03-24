@@ -39,12 +39,15 @@
 			}
 		},
 		methods: {
+		    // 显示分类菜单函数
 			chooseCategory(){
 				this.isShow = true;
 			},
+			// 点击Mask消失函数
 			onMask(){
 				this.isShow = false;
 			},
+			// 选择商品分类
 			onSelect(e) {
 				let that = e.target;
 				this.currenSelect.id = that.getAttribute('data-id');

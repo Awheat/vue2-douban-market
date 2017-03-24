@@ -105,6 +105,7 @@
 			this.getDetailSlider();
 		},
 		watch: {
+		    // 监听数量的值
 			number: function(val,oldVal){
 				if(val<0){
 					this.number = 1;
@@ -114,6 +115,7 @@
 			}
 		},
 		methods: {
+		    //获取图片数据
 			getDetailSlider(){
 				axios.get('/mock/detail/detail_slider.json').then((response)=>{
 					this.sliders = response.data.list;
@@ -121,21 +123,25 @@
 					console.log('请求slider数据:'+error);
 				});
 			},
+			//tab选项卡的切换
 			toggleTabs(componentId,e) {
 				this.isActive = e.target.getAttribute("data-id");
 				this.componentId = componentId;
 			},
+			//数量减函数
 			minus() {
 				if(this.number>0){
 					this.number--;
 				}
 			},
+			//数量加函数
 			addition() {
 				if(isNaN(this.number)){
 					this.number = 0;
 				}
 				this.number++;
 			},
+			//返回
 			goBack(){
 				this.$router.go(-1);
 			}
