@@ -54,6 +54,7 @@
             ])
         },
 		methods: {
+		    //获取热门店铺列表
 			...mapActions(['getHotShops'])
 		},
 		components: {

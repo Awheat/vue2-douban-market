@@ -24,6 +24,7 @@
             ])
 		},
 		mounted() {
+		    //获取热门商品列表
 			this.getHotProducts();
 		},
 		methods: {

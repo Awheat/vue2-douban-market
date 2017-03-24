@@ -29,16 +29,16 @@
 		  	}
 		},
 		computed: {
-			//映射State
+			//鏄犲皠鏁版嵁
             ...mapState([
                 'sliders'
             ])
         },
 		mounted() {
+		    //鑾峰彇鍥剧墖鍒楄〃
 			this.getSliders();
 		},
 		methods: {
-        	// 映射Actions中的handlerScroll方法
         	...mapActions([
 			    'getSliders'
 			])
