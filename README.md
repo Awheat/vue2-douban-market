@@ -15,7 +15,7 @@ http://www.i728.top/pages/7/douban/#/
 
 ### 部分截图
 
-![Markdown](http://p1.bqimg.com/587986/50a15b82eaf7347b.jpg)
+![Markdown](http://www.i728.top/dist/images/vue_db_market_preview.png)
 
 ### 项目地址：（`git clone`）
 
