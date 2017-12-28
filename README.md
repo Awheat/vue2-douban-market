@@ -11,7 +11,7 @@ http://www.i728.top/pages/7/douban/#/
 
 ### 手机扫码访问
 
-![Markdown](http://www.i728.top/dist/images/vue_db_market_ewm.png)
+![Markdown](http://www.i728.top/dist/images/ewm_douban_market.png)
 
 ### 部分截图
 
@@ -80,7 +80,7 @@ npm run build
 
 ### 感谢
 
-感谢您的来访 ，如果对于您有帮助 ，麻烦您使劲的给个Star吧 ！ ^_^ 
+感谢您的来访 ，如果对于您有帮助 ，就使劲的给个Star吧 ！ ^_^
 
 
 
