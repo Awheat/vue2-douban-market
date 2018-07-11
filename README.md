@@ -7,15 +7,15 @@ so 在最近工作之余的时间就正儿八经的撸起袖子开始了我的vu
 
 ### 线上访问地址
 
-http://www.i728.top/pages/7/douban/#/
+http://wuwc.i728.top/examples/7/douban/#/
 
 ### 手机扫码访问
 
-![Markdown](http://www.i728.top/dist/images/ewm_douban_market.png)
+![Markdown](http://wuwc.i728.top/static/images/ewm_vue.png)
 
 ### 部分截图
 
-![Markdown](http://www.i728.top/dist/images/db_market_preview.png)
+![Markdown](http://wuwc.i728.top/static/images/db_market_preview.png)
 
 ### 项目地址：（`git clone`）
 
