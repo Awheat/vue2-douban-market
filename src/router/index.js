@@ -18,47 +18,46 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/home'
+    },
+    {
+      path: '/home',
       name: 'Home',
       component: Home
     },
     {
-    	path:'/home',
-    	name:'Home',
-    	component: Home
-    },
-    {
-      path:'/category',
-      name:'Category',
+      path: '/category',
+      name: 'Category',
       component: Category
     },
     {
-      path:'/list/:id',
-      name:'List',
+      path: '/list/:id',
+      name: 'List',
       component: List
     },
     {
-      path:'/detail/:id',
-      name:'Detail',
+      path: '/detail/:id',
+      name: 'Detail',
       component: Detail
     },
     {
-      path:'/cart',
-      name:'Cart',
+      path: '/cart',
+      name: 'Cart',
       component: Cart
     },
     {
-      path:'/my',
-      name:'My',
+      path: '/my',
+      name: 'My',
       component: My
     },
     {
-      path:'/login',
-      name:'Login',
+      path: '/login',
+      name: 'Login',
       component: Login
     },
     {
-      path:'/404',
-      name:'Error',
+      path: '/404',
+      name: 'Error',
       component: Error
     },
     {
